@@ -1,0 +1,59 @@
+.quality-policy{
+    height: 300px;
+    background-image: url(../images/quality-policy-bg.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    line-height: initial;
+    >.quality-policy-message{
+        position: absolute;
+        width:75%;
+        top:50%;
+        #{$side} : 50%;
+        transform: translate( if($side == left , -50% , 50%) , -50%);
+        background-color: rgba($color: white, $alpha: 0.75);
+        padding:20px;
+        color:#585858;
+        > .quality-policy-header{
+            font-weight: bold;
+            font-size:20px;
+        }
+        > hr{
+            border: solid 1px #585858;
+            width:50%;
+            margin:20px 0;
+        }
+        svg{
+            display: none;
+        }
+    }
+    @media(min-width:$md-breakpoint){
+        height: 500px;
+        >.quality-policy-message{
+            padding:40px;
+            > .quality-policy-header{
+                font-size:40px;
+            }
+            > hr{
+                border-width: 2px;
+                margin:40px 0;
+            }
+            svg{
+                display: inline;
+                .L{
+                fill:#5da132;
+                }
+            }
+            > #right-L{
+                position: absolute;
+                top:0;
+                #{$cross-side}:-30px;
+            }
+            > #left-L{
+                position: absolute;
+                bottom:0;
+                #{$side} : -30px;
+            }
+        }
+    }
+}

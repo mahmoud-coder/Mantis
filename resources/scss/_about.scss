@@ -1,0 +1,31 @@
+.about{
+    background: $about-background-color url(../images/about-bg.png) no-repeat;
+    background-size: cover;
+    line-height: initial;
+    >.about-message{
+        background-color: rgba($primary-color, 0.8);
+        color:white;
+        padding:20px;
+        >.header{
+            font-family:Raleway;
+        }
+    }
+   @media (min-width:$md-breakpoint){
+        height: $about-height;
+        position: relative;
+        > .about-message{
+            position: absolute;
+            #{$cross-side}:0;
+            top:25%;
+            max-width: 75%;
+        }
+    }
+   @media (min-width:$lg-breakpoint){
+        > .about-message{
+            position: absolute;
+            #{$cross-side}:0;
+            top:30%;
+            max-width: 50%;
+        }
+    }
+}

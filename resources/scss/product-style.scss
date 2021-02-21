@@ -1,0 +1,38 @@
+@import "variables";
+@import "reboot";
+@import "font-faces";
+@import "icons";
+@import "util";
+@import "top-bar";
+@import "logo";
+@import "nav";
+//---------- product style ---------------
+.product-row{
+    display:flex;
+    flex-wrap: wrap;
+    .product-image{
+        flex:0 0 33%;
+        text-align: center;
+        padding:4px;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    .product-details-container{
+        flex:0 0 67%;
+        padding:4px;
+        > .product-details{
+            border: 1px solid lightgray;
+            padding:20px;
+            background-color: white;
+        }
+    }
+}
+@media(min-width:$lg-breakpoint){
+   .product-row{
+       margin-top:400px;
+   } 
+}
+// --------------- End Product style ---------------------
+@import "footer";

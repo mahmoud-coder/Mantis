@@ -1,0 +1,88 @@
+// SVG 
+.st0{fill:none;stroke:$secondary-color;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st1{fill:none;stroke:$secondary-color;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st2{fill:none;stroke:$secondary-color;stroke-width:4;stroke-linecap:round;stroke-miterlimit:10;}
+.st3{fill:none;stroke:$secondary-color;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+.st4{fill:none;stroke:$secondary-color;stroke-miterlimit:10;}
+.st5{fill:none;stroke:$secondary-color;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+
+@mixin form-control{
+    width:100%;
+    border:1px solid lightgray;
+    border-radius: 0.25rem;  
+    display: block; 
+    padding:10px;
+    margin-bottom:10px;
+    outline:none;
+    &:focus{
+        outline:none;
+        box-shadow: 0 0 3px 3px $primary-color;
+    }
+    &::placeholder{
+        color:lightgray;
+    }
+}
+.contact-us-bg{
+    margin-top:400px;
+    padding:30px;
+    background-image: url("/images/contact-us-bg.jpg");
+    background-repeat: no-repeat;
+    .contact-us-row{
+        display:flex;
+        flex-wrap: wrap;
+        background-color: rgba(white,0.8);
+        padding:30px;
+        .contact-us-illustrator{
+            flex:0 0 50%;
+            background-color:rgba(white,0.6);
+            padding:30px;
+            .illustrator-title{
+                color:$secondary-color;
+                text-align: center;
+                font-size:48px;
+                font-weight: bold;
+                margin-bottom: 40px;
+            }
+            .illustrator{
+                width:100%;
+                height: auto;
+            }
+        }
+        .form-inputs{
+            flex:0 0 50%;
+            position: relative;
+            padding:10px;
+            input{
+                height:3.5rem;
+                @include form-control;
+            }
+            textarea{
+                @include form-control;
+            }
+            .send-btn{
+                display: inline-block;
+                font-weight: bold;
+                color: white;
+                text-align: center;
+                vertical-align: middle;
+                user-select:none;
+                border: 1px solid transparent;
+                padding: .375rem .75rem;
+                font-size: 1rem;
+                line-height: 1.5;
+                border-radius: .25rem;
+                background-color:$secondary-color;
+                outline:none;
+                cursor: pointer;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                svg{
+                    margin: 0 15px;
+                    vertical-align: middle;
+                    fill:white;
+                }
+            }
+        }
+    }
+}

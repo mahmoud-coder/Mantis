@@ -1,0 +1,47 @@
+// direction 
+$side:left;
+$cross-side:right;
+
+// $side:right;
+// $cross-side:left;
+// *{
+//     direction: rtl;
+// }
+
+// responsive breakpoints
+$lg-breakpoint:1100px;
+$md-breakpoint:700px;
+
+//body
+$body-color:#666;
+$body-bg:#f3f4f9;
+$font-weight-base:normal;
+
+$headings-margin-bottom:5px;
+$paragraph-margin-bottom:15px;
+
+//tables
+$dt-font-weight:normal;
+$table-cell-padding:0;
+$table-caption-color: $body-color;
+
+
+//links
+$link-color:inherit;
+$link-decoration: none;
+$link-hover-color:inherit;
+$link-hover-decoration:none;
+
+$primary-color:#5da132;
+$secondary-color:#424da1;
+
+//header
+$container-border-top:solid $primary-color 7px;
+$top-bar-height:48px;
+
+//about section
+$about-background-color:#e2efda;
+$about-height:600px;
+
+//services seciton
+$services-height:600px;

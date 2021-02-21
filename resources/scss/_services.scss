@@ -1,0 +1,55 @@
+.services{
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    > .service{
+        flex:0 0 25%;
+        padding: 50px;
+        border-bottom: solid 1px $primary-color;
+        >.icon-container{
+            background-image: url(../images/service-bg.svg);
+            background-size: cover;
+            width:200px;
+            height:200px;
+            margin: auto;
+            position: relative;
+            >*{
+                position: absolute;
+                top:50%;
+                #{$side}:50%;
+                transform: translate(if($side == left,-50%,50%),-50%);
+                font-size: 60px;
+                color:#959595;
+            }
+        }
+        
+        >.header{
+            text-align: center;
+            margin: 70px 0;
+        }
+        >.content{
+            text-align: center;
+            line-height: 1.6rem;
+        }
+    }
+    @media(min-width:$md-breakpoint){
+        >.service{
+
+            >.header{
+                font-family: Raleway;
+                font-size: 24px;
+            }
+        }
+    }
+    @media(min-width:$lg-breakpoint){
+        // height:$services-height ;
+        > .service{
+            flex:1 0 0;
+            border-bottom: none;
+            >.header{
+                font-size:30px;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+@import "variables";
+@import "reboot";
+@import "font-faces";
+@import "icons";
+@import "util";
+@import "top-bar";
+@import "logo";
+@import "nav";
+//---------- product style ---------------
+.calender-header{
+    color:$primary-color;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 3rem;
+    padding-#{$side}:40px;
+    background-image: url(/images/calender-bg.png);
+}
+.calender-body{
+    padding: 40px;
+    background-color: white;
+}
+@media(min-width:$lg-breakpoint){
+    .calender-container{
+        margin-top: 400px;
+    }
+}
+.calender-svg{
+    width:100%;
+    height:auto;
+}
+.st0{fill:#5DA132;}
+.st1{fill:#424DA1;}
+.st2{fill:none;stroke:#5B5959;stroke-miterlimit:10;}
+.st3{fill-rule:evenodd;clip-rule:evenodd;fill:none;stroke:#808080;stroke-miterlimit:10;}
+.st4{fill:#5B5959;}
+.st5{fill:none;stroke:#808080;stroke-miterlimit:10;}
+.st6{fill:#FFFFFF;}
+.st7{font-family:'Arial';}
+.st8{font-size:12px;}
+.st9{font-size:11px;}
+
+// --------------- End Product style ---------------------
+@import "footer";

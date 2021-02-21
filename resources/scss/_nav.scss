@@ -1,0 +1,91 @@
+.nav-toggle{
+    cursor: pointer;
+    position: absolute;
+    #{$cross-side}:10px;
+    top:50%;
+    transform: translateY(-50%);
+    border:1px solid $primary-color;
+    // border:none;
+    padding:8px;
+    outline: none;
+    .bars{
+        width:20px;
+        height: 2px;
+        border-radius: 1px;
+        background-color: $primary-color;
+        margin: 2px 0;
+        // transform-origin: center center;
+        transition: transform 300ms;
+    }
+    &.toggled .bars{
+        &.bar1{ transform: translateY(4px) rotate(-45deg); }
+        &.bar2{ opacity: 0;}
+        &.bar3{ transform: translateY(-4px) rotate(45deg);}
+    }
+    @media (min-width:$md-breakpoint){
+        display:none;
+    }
+}
+.nav-menu{
+    display: none;
+    position: absolute;
+    list-style: none;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    background: $primary-color;
+    line-height: 10vh;
+    text-align: center;
+    > .nav-menu-item{
+        border-bottom: 1px solid white;
+        &:hover{
+            background-color: lighten($color: $primary-color, $amount: 5%);
+        }
+    }
+    @media (min-width:$md-breakpoint){
+        position: relative;
+        padding:0;
+        background-color: $secondary-color;
+        font-size: 18px;
+        line-height: 50px;
+        color:white;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        > .nav-menu-item{
+            flex: 1 0 0;
+            text-align: center;
+            border-bottom: none;
+            &:hover{
+                background-color: lighten($secondary-color, 5%);
+                cursor: pointer;
+                position: relative;
+                &::after{
+                    content:'';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    border: $primary-color solid 3px;
+                    animation: nav-anim 250ms linear forwards ;
+                }
+            }
+        }
+    }
+    @media (min-width:$lg-breakpoint){
+        float:$cross-side;
+        width: calc(100% - #{$logo-container-width});
+        font-size: 24px;
+        line-height: 84px;
+        margin:40px 0 0;
+    }
+}
+@keyframes nav-anim{
+    from{
+        width:0;
+        left:50%;
+    }
+    to{
+        width: 100%;
+        left: 0;
+    }
+}

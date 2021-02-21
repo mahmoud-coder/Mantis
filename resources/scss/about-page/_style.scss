@@ -1,0 +1,83 @@
+.about-hero{
+    background: url(/images/about-hero.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 30vw;
+    overflow: hidden;
+}
+.about-messages{
+    width: 80%;
+    background-color: white;
+    border: solid 1px lightgray;
+    margin: -40px auto 0;
+    padding: 15px;
+    .about-message-container{
+        @include clearFix;
+        margin: 15px 0;
+        >.featured-image{
+            width:15%;
+            padding: 5px;
+            float:$side;
+            text-align: center;
+            img{
+                max-width: 100%;
+            }
+        }
+        >.about-message{
+            width:85%;
+            padding:5px;
+            float: $side;
+            >.about-message-title{
+                color:#494848;
+                font: bold 18px Raleway;
+                margin-bottom: 15px;
+            }
+            .about-message-content{
+                color:#777777;
+                font:normal 14px Raleway;
+                &.list{
+                    margin-#{$side}:20px;
+                }
+            }
+        }
+    }
+    @media(min-width:$md-breakpoint){
+        margin: -60px auto 0;
+        .about-message-container{
+            >.featured-image{
+                width:20%;
+            }
+            >.about-message{
+                width:80%;
+                >.about-message-title{
+                    font: bold 20px Raleway;
+                    margin-bottom: 20px;
+                }
+                .about-message-content{
+                    font:normal 16px Raleway;
+                }
+            }
+        }
+    }
+    @media(min-width:$lg-breakpoint){
+        .about-messages{
+            margin: -100px auto 0;
+            .about-message-container{
+                >.featured-image{
+                    width:10%;
+                }
+                >.about-message{
+                    width:90%;
+                    >.about-message-title{
+                        font: bold 24px Raleway;
+                        margin-bottom: 30px;
+                    }
+                    .about-message-content{
+                        font:normal 18px Raleway;
+                    }
+                }
+            }
+        }
+    }
+}
+

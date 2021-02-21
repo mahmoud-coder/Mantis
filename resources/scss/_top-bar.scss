@@ -1,0 +1,28 @@
+.top-bar{
+    display: none;
+    @media (min-width:$md-breakpoint){  
+        display: block; 
+        color:$primary-color;
+        font-family: Arial, Helvetica, sans-serif;
+        text-align: center;
+        height:$top-bar-height;
+        position: relative;
+        > .item{
+            display: inline-block;
+            margin: 13px 16px;
+        }
+    }
+    @media (min-width:$lg-breakpoint) {
+        float: $cross-side;
+        font-weight: bold;
+        color:white;
+        background-color: $primary-color;
+        &::before{
+            content:'';
+            position: absolute;
+            border-#{$cross-side}:solid $primary-color 60px;
+            border-bottom:solid transparent $top-bar-height;
+            #{$side}:-60px;
+        }
+    }
+}

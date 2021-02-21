@@ -1,0 +1,114 @@
+.products{
+    $top-margin:30px;
+    margin-bottom: $top-margin;
+    position: relative;
+    > svg.products-abstruct{
+        max-width:130px;
+        position: absolute;
+        top:-$top-margin - 5px;
+        z-index: -1;
+        #{$cross-side}:0;
+        .st0{fill:#F0F1F8;}
+        .st1{fill:#EAECF3;}
+        .st2{fill:#E8EAF6;}
+        .st3{fill:#EFF0F8;}
+        .st4{fill:#E6E8F5;}
+        .st5{fill:#F1F1F6;}
+        .st6{fill:#EFEFF4;}
+    }
+    hr{
+        border:solid white 1px;
+        width:66%;
+        margin-top: $top-margin;
+    }
+    hr.bottom{
+        float:$cross-side;
+    }
+    > .header{
+        margin-#{$side}:70px;
+        margin-top: 50px;
+        color: #5da132;
+        font-family: Raleway;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    > .header.shadow{
+        color: white;
+        font-size: 35px;
+        position: absolute;
+        top: -7px;
+        #{$side}:-55px;
+        z-index: -1;
+        user-select: none;
+    }
+    @import "categories";
+    > .products-grid{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 100px;
+        >.product-container{
+            flex:0 0 33%;
+            padding:15px;
+            > .product{
+                border: solid lightgray 1px;
+                background-color: white;
+                padding:5px;
+                width:230px;
+                margin:auto;
+                >.product-thumbnail{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+                }
+                >.product-btn{
+                    $height:40px;
+                    width:180px;
+                    height:$height;
+                    line-height: $height;
+                    text-align: center;
+                    margin: -$height/2 auto 0;
+                    font-size: 18px;
+                    border-radius: $height/2;
+                    background-color: $secondary-color;
+                    display: block;
+                    color:white;
+                    z-index:1;
+                    position: relative; // z-index didnot work on static position
+                }
+            }
+        }
+    }
+    .btn-all-products{
+        $height:45px;
+        background-color: $primary-color;
+        color:white;
+        display: block;
+        width:200px;
+        height:$height;
+        text-align: center;
+        line-height: $height;
+        font-size:20px;
+        float:$cross-side;
+    }
+    @media(min-width: $lg-breakpoint){
+        $top-margin:50px;
+        margin-bottom: $top-margin;
+        > svg.products-abstruct{
+            max-width: unset;
+            top:-$top-margin - 5px;
+        }
+        hr{
+            margin-top:$top-margin;
+        }
+        > .header{
+            margin-#{$side}:150px;
+            font-size: 40px;
+            &.shadow{
+                font-size:55px;
+                top:-15px;
+                #{$side}:-130px;
+            }
+        }
+    }
+}
