@@ -13,7 +13,7 @@ class ContactController extends Controller
         return view('contact-us',Option::all_options());
     }
     public function send(Request $request){
-        Mail::to('mantis.agriculture@gmail.com')->send(new ContactMail([
+        Mail::to('info@mantis-agriculture.com')->send(new ContactMail([
             'name' => $request->name,
             'email' => $request->email,
             'subject' => $request->subject,
