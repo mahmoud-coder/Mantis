@@ -182,10 +182,22 @@ class AdminController extends Controller
     }
 
     public function update(){
-      if(file_exists(base_path('update/script.php'))){
-            include base_path('update/script.php');
-      }else{
-          abort(404);
-      }
+        $version_to = null;
+        $update_to = null;
+        $active_page = 'update';
+        if($update_exits = file_exists( base_path('update.php') )){
+            include base_path('update.php');
+            $update_to = update_to(); // asumed to be defined in update.php , return the version 
+        }
+        return view('admin.update',
+            array_merge( Option::all_options() ,
+                compact('update_exits','update_to', 'active_page')
+            ));
+    }
+    public function update_POST(){
+        include base_path('update.php');
+        $response = update_script();   // asumed to be defined in update.php return array to be ajax response
+        unlink(base_path('update.php'));
+        return $response;
     }
 }

@@ -46,7 +46,8 @@ Route::prefix('admin')->middleware('auth')->group(function(){
     Route::get('/edit/product/{id}',[AdminController::class,'edit_product'])->name('admin.edit.product');
     Route::post('/edit/product/{id}',[AdminController::class,'update_product']);
 
-    Route::get('/update', [AdminController::class,'update']);
+    Route::get('/update', [AdminController::class,'update'])->name('admin.update');
+    Route::post('/update', [AdminController::class,'update_POST']);
 
     //PAGES
     Route::get('/pages/home',[AdminController::class,'pages_home'])->name('admin.pages.home');
