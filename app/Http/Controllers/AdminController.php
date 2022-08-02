@@ -38,7 +38,7 @@ class AdminController extends Controller
         if( Auth::attempt($credentials , $remeber_me) || Auth::attempt($credentials_alt ,$remeber_me)){
             return redirect()->intended('admin');
         }else{
-           return $request;
+           return $request; //todo
         }
     }
 
@@ -196,7 +196,7 @@ class AdminController extends Controller
     }
     public function update_POST(){
         include base_path('update.php');
-        $response = update_script();   // asumed to be defined in update.php return array to be ajax response
+        $response = update_script();   // assumed to be defined in update.php return array to be ajax response
         unlink(base_path('update.php'));
         return $response;
     }
