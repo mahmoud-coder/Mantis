@@ -84,14 +84,15 @@
     <h3 class="header">Explore Our Products</h3>
     <h3 class="header shadow">Explore Our Products</h3>
     <hr class="bottom">
-    @include('partials.categories')
     {{--
+        <!-- divide products to frozen and fresh -->
+        @include('partials.categories')
+    --}}
     <div class="products-grid">
         @foreach($products as $product)
             @include('partials.product',$product)
         @endforeach
     </div>
-     <a href="{!! route('products') !!}" class="btn-all-products">check all products</a>
-    --}}
+    <a href="{!! route('products') !!}" class="btn-all-products">check all products</a>
 </div>
 @endsection

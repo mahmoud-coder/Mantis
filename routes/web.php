@@ -30,8 +30,14 @@ Route::get('/about', AboutController::class )->name('about');
 
 Route::get('/products/{slug}',[ProductController::class,'single'])->name('product');
 Route::get('/all_products',[ProductController::class,'all_products'])->name('products');
+
+/*
+if you want to divide the products to fresh and frozen
+
 Route::get('/fresh_products',[ProductController::class,'fresh_products'])->name('fresh_products');
 Route::get('/frozen_products',[ProductController::class,'frozen_products'])->name('frozen_products');
+*/
+
 Route::get('/contact_us',[ContactController::class, 'index'])->name('contact');
 Route::post('/contact_us',[ContactController::class, 'send']);
 Route::get('/calender', CalenderController::class )->name('calender');

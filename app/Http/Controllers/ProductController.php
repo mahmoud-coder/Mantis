@@ -15,6 +15,7 @@ class ProductController extends Controller
         return view('product',Option::all_options())->with('product', Product::where('slug',$slug)->first() );
     }
     public function all_products(){
+        /* In case if the products divided to fresh and frozen
         return view('categories',
             array_merge(
                 Option::all_options(),
@@ -23,6 +24,10 @@ class ProductController extends Controller
                     'products' => Product::simplePaginate(Option::get('products_page_max'))
                 ]
             ));
+        */
+        
+        /* in case of only show fresh products, no frozen */
+        return $this->fresh_products();
     }
     public function fresh_products(){
         return view('products', array_merge(
